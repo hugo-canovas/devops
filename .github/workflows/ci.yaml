@@ -25,3 +25,12 @@ jobs:
 
       - name: build app
         run: npm run build
+
+      - name: start serveur
+        run: npm start &
+
+      - name: wait serveur
+        run: npx wait-on http://localhost:3000
+
+      - name: run test
+        run: npm run test
