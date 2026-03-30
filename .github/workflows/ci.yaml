@@ -26,5 +26,8 @@ jobs:
       - name: build app
         run: npm run build
 
+      - name: start serveur
+        run: npm run start
+
       - name: run test
-        run: npx tsx __tests__/home.test.tsx
+        run: npm run test
