@@ -27,4 +27,4 @@ jobs:
         run: npm run build
 
       - name: run test
-        run: npm run test
+        run: npx tsx __tests__/home.test.tsx
