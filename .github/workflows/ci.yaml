@@ -15,19 +15,14 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v4
 
-      - name: install node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 24
+      - name: build docker image
+        run: docker compose build
 
-      - name: npm install
-        run: npm install
+      - name: start container
+        run: docker compose up -d
 
       - name: build app
         run: npm run build
-
-      - name: start serveur
-        run: npm start &
 
       - name: wait serveur
         run: npx wait-on http://localhost:3000
