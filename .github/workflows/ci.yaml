@@ -22,10 +22,9 @@ jobs:
         run: docker compose exec -T app npm run test
 
       - name: sonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@v2
+        uses: SonarSource/sonarcloud-github-action@master
         with:
-          organization: HugoCanovas
-          projectKey: github-sonarque
+          projectBaseDir: .
 
       - name: stop docker
         if: always()
