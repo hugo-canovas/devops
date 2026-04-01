@@ -22,7 +22,7 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          IMAGE="ghcr.io/$(echo '${{ github.repository }}' |)"
+          IMAGE="ghcr.io/$(echo '${{ github.repository }}')"
           docker build \
             -f .docker/app/Dockerfile.prod \
             -t $IMAGE:latest \
